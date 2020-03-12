@@ -1,28 +1,24 @@
 
-/*
-.page-holder {
-  min-height: 100vh;
-}
-*/
 
-html {
-    scroll-behavior: smooth;
+fieldset {
+    border: solid 1px #007bff;
+    padding: 1em;
 }
 
-.bg-cover {
-    background-size: cover !important;
+legend {
+    color: #007bff;
+    font-variant: small-caps;
 }
 
-.myCard{
-    width: 18rem;
+h1{
+    color: #007bff;
 }
 
-.nav-link{
-    color: black;
-    font-size: 20px;
+.error{
+    color: red;
+    visibility: hidden;
 }
 
-.myHr {
-    width : 50%;
+#buttons{
+    display: none;
 }
-

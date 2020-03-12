@@ -1,182 +1,156 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS //////////KEY FOR STYLES//////////-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="myStyles.css">
 
-    <!-- my css -->
-    <link rel="stylesheet" href="css/myStyles.css">
+    <title>Guestbook</title>
 
-    <title>Portfolio</title>
-
-    <!-- favicon -->
-    <link href="images/myFavicon.png" rel="icon" type="image/png">
+    <!--favicon-->
+    <link rel="icon" type="image/png" href="favicon.png">
 
 
 </head>
 <body>
 
-<!-- Navbar-->
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item font-weight-bold display-6">
-                    <a class="nav-link js-scroll-trigger" href="#aboutMe">About Me</a>
-                </li>
-                <li class="nav-item font-weight-bold display-6">
-                    <a class="nav-link js-scroll-trigger" href="#worksMe">Works</a>
-                </li>
-            </ul>
+
+<div id="main" class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-center font-weight-bold">Sign the Guestbook</h1>
+            <p class="text-center"><a href="admin.php">(Admin)</a></p>
         </div>
     </div>
-</nav>
 
-<!-- Page Wrapper -->
-<div style="background: url(images/mainImg2.jpg)" class="page-holder bg-cover">
-    <div class="container py-5">
-        <header class="py-5">
-            <h1 class="display-4 font-weight-bold mb-4 text-white">Hi, I'm Amardip</h1>
-            <p class="lead mb-0 font-weight-bold text-white">Software Development Student</p>
-        </header>
-    </div>
+    <form id="myForm" action="confirm.php" method="post">
+
+        <fieldset class="form-group">
+            <legend>Contact Info</legend>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name">
+                        <span class="error" id="errFName">First name is required</span>
+                    </div>
+                    <div class="col">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name">
+                        <span class="error" id="errLName">Last name is required</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" class="form-control" id="jobTitle" name="jobTitle" placeholder="Job Title">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="company">Company</label>
+                    <input type="text" class="form-control" id="company" name="company" placeholder="Company">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Company Location">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email"  name="email" placeholder="you@example.com">
+                <span class="error" id="errEmail">Must contain "@" and "."</span>
+            </div>
+
+            <div class="form-group">
+                <label for="linkedIn">LinkedIn URL</label>
+                <input type="text" class="form-control" id="linkedIn" name="linkedIn" placeholder="URL">
+                <span class="error" id="errurl">Enter valid LinkdIn URL</span>
+            </div>
+        </fieldset>
+
+
+
+
+
+        <fieldset class="form-group">
+            <legend>How we met</legend>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label>How did we meet?</label>
+                        <select class="form-control" id="meet" name="meet">
+                            <option value="none">Choose One</option>
+                            <option value="jobFair">Job Fair</option>
+                            <option value="meetup">Meetup</option>
+                            <option value="haven't">We haven't met</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error" id="errMeet">Please select an option</span>
+                    </div>
+                    <div class="col" id="otherShow">
+                        <label for="otherS">Other (please specify)</label>
+                        <input type="text" class="form-control" id="otherS" name="otherS">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend>Mailing List</legend>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="mailingList" name="mailingList" value="mailingList">
+                            <label class="form-check-label" for="mailingList">Please add me to your mailing list!</label>
+                            <span class="error" id="errMEmail"><br>Please enter email above</span>
+                        </div>
+                    </div>
+
+                    <div class="col" id="buttons">
+                        <p class="mb-1">Please choose an email format:</p>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="ehtml" name="eFormat" value="html">
+                            <label class="custom-control-label" for="ehtml">HTML</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="eText" name="eFormat" value="text">
+                            <label class="custom-control-label" for="eText">Text</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+
+
+    </form>
+
 </div>
-
-
-<!-- About Me Section-->
-<p><br></p>
-
-<section class="about pt-100 pb-100" id="aboutMe">
-    <div class="container">
-        <div class="about-heading text-center">
-            <h2>ABOUT ME</h2>
-        </div>
-        <hr class="myHr">
-        <div class="row">
-            <div class="col-lg-5 col-md-6">
-                <!--About Image-->
-                <div class="about-img">
-                    <img src="images/me2.jpg" alt="main">
-                </div>
-            </div>
-            <div class="col-lg-7 col-md-6">
-                <!--About Content-->
-                <div class="about-content">
-                    <p><br><br>My name is Amardip Kaur. I am a Software Development student at Green River College. I got my General Associates
-                        in Arts and currently working on getting my Bachelor's in Information Technology. Coming with a strong foundation
-                        in Software Development and programming principles across multiple platforms and planning on growing my career.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<hr>
-
-
-<!-- Links-->
-<p><br><br><br></p>
-<section class="services bg-gray pt-100 pb-50" id="worksMe">
-    <div class="container">
-
-        <div class="row">
-            <div class="col">
-                <div class="heading text-center">
-                    <h2>MY WORK</h2>
-                </div>
-            </div>
-        </div>
-        <hr class="myHr">
-
-        <p><br></p>
-
-        <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4"> -->
-        <div class="row">
-
-            <div class="col-md-4 mb-5">
-                <div class="card myCard">
-                    <img class="card-img-top" src="images/dayside-logo.jpeg" alt="Dayside LLC">
-
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://afternooners.greenriverdev.com/DaysideLLC/" target="_blank" class="stretched-link">Dayside LLC</a></h5>
-                        <p class="card-text">Created a Scrum Team Project using Agile for a client.</p>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-md-4 mb-5">
-                <div class="card myCard">
-                    <img class="card-img-top" src="images/sign.jpg" alt="Guestbook">
-
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://akaur.greenriverdev.com/305/guestbook/index.html" target="_blank" class="stretched-link">Guestbook</a></h5>
-                        <p class="card-text">How did we meet guestbook sign in form.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-5">
-                <div class="card myCard">
-                    <img class="card-img-top" src="images/tasteOfPunjab.png" alt="taste">
-
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://akaur.greenriverdev.com/305/localBusiness/" target="_blank" class="stretched-link">Local Business</a></h5>
-                        <p class="card-text">Self created website for a pretend business.</p>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-md-4 mb-5">
-                <div class="card myCard">
-                    <img class="card-img-top" src="images/resume.jpg" alt="Resume">
-
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://akaur.greenriverdev.com/305/Resume" target="_blank" class="stretched-link">Resume</a></h5>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-md-4 mb-5">
-                <div class="card myCard">
-                    <img class="card-img-top" src="images/LinkedIn.jpg" alt="LinkedIn">
-
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://www.linkedin.com/in/amardipkaur" target="_blank" class="stretched-link">Linked In</a></h5>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-md-4 mb-5">
-                <div class="card myCard">
-                    <img class="card-img-top" src="images/admin.jpg" alt="Admin">
-
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="https://akaur.greenriverdev.com/305/guestbook/admin.php" target="_blank" class="stretched-link">Admin</a></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>;
+<script src="guestVal.js"></script>
+
 
 </body>
+</html>
