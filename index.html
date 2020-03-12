@@ -1,156 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS //////////KEY FOR STYLES//////////-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="myStyles.css">
 
-    <title>Guestbook</title>
 
-    <!--favicon-->
-    <link rel="icon" type="image/png" href="favicon.png">
-
+    <title>Resume</title>
 
 </head>
 <body>
 
 
-<div id="main" class="container">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4 text-center font-weight-bold">Sign the Guestbook</h1>
-            <p class="text-center"><a href="admin.php">(Admin)</a></p>
+    <div class="container">
+
+        <h3 class="text-center">Amardip Kaur</h3>
+
+        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 ml-auto font-weight-bold" >
+        <a href="https://www.linkedin.com/in/amardipkaur" class="float-right" target="_blank">Linked
+            In: https://www.linkedin.com/in/amardipkaur</a>
         </div>
+
+        <h4>SUMMARY</h4>
+        <ul>
+            <li>Upcoming BS graduate offering a strong foundation in software
+                development and programming principles across multiple platforms.
+                Experienced in object-oriented programming; developing; designing;
+                testing and debugging code </li>
+        </ul>
+
+        <hr class="align-left" id="line">
+
+        <h4>EDUCATION</h4>
+        <p class="mb-0"><strong>Green River College</strong>-Auburn, WA</p>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="mb-0"><strong>Bachelor's of Applied Science</strong>, expected graduation June 2021</p>
+                    <ul>
+                        <li>Relevant coursework:
+                            <ul>
+                                <li>Data Structures</li>
+                                <li>Object-Oriented Programming</li>
+                                <li>Class projects</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <p class="mb-0"><strong>Associate's in Arts</strong>, June 2019</p>
+                    <ul>
+                        <li>In honors</li>
+                        <li>With main focus on Information Technology</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <hr>
+
+        <h4>SKILLS</h4>
+        <ul>
+            <li>Knowledge in Java, C++, Python, JavaScript, Bootstrap</li>
+            <li>Expert with PC’s</li>
+            <li>Highly skilled with Microsoft Office, Microsoft Word,
+                Microsoft Excel, PowerPoint, Google Docs and phone applications,
+                with knowledge of visual studio, CSS, HTML</li>
+            <li>Fluent in English, Punjabi, Hindi and intermediate in Spanish</li>
+            <li>Quickly learn and master new technologies; successful working in
+                both team and self-directed setting</li>
+        </ul>
+
+        <hr>
+
+        <h4>EXPERIENCE</h4>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm border-right">
+                    <p class="mb-0"><strong>Dayside LLC</strong>, 2020</p>
+                    <ul>
+                        <li>Web development- developing a website and adding new features to it
+                            based on the needs of the client to improve the product </li>
+                        <li>Troubleshooting and working collaboratively with a team </li>
+                    </ul>
+                </div>
+                <div class="col-sm border-right">
+                    <p class="mb-0"><strong>Amazon</strong>, 2019</p>
+                    <ul>
+                        <li>Stow bootcamp survey- analyzing faults in stowing techniques and
+                            fix them to save the company from 150+ hours each day</li>
+                        <li>Working with new technology, devices, and machines</li>
+                        <li>Understanding and solving technical Problems</li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <p class="mb-0"><strong>Dairy Queen</strong>, 2017-2019</p>
+                    <ul>
+                        <li>Excellent written and verbal communication skills- day to
+                            day interactions with the customers</li>
+                        <li>Taking on responsibility and working as a leader to train peers
+                            and report details to the manager</li>
+                        <li>Commitment and dedication to learn from mistakes and challenge to do better</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="col-md-4 ml-auto">
+            <img src="mine.png" class="rounded float-right" alt="photo">
+        </div>
+
+        <h4>ACHIEVEMENTS</h4>
+        <ul>
+            <li>South King Web and Mobile Developers Member </li>
+            <li>Memeber of Women in Tech</li>
+            <li>National Honor Society student</li>
+        </ul>
+
     </div>
-
-    <form id="myForm" action="confirm.php" method="post">
-
-        <fieldset class="form-group">
-            <legend>Contact Info</legend>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label for="firstName">First Name *</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name">
-                        <span class="error" id="errFName">First name is required</span>
-                    </div>
-                    <div class="col">
-                        <label for="lastName">Last Name *</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name">
-                        <span class="error" id="errLName">Last name is required</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="jobTitle">Job Title</label>
-                    <input type="text" class="form-control" id="jobTitle" name="jobTitle" placeholder="Job Title">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="company">Company</label>
-                    <input type="text" class="form-control" id="company" name="company" placeholder="Company">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" name="city" placeholder="Company Location">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email"  name="email" placeholder="you@example.com">
-                <span class="error" id="errEmail">Must contain "@" and "."</span>
-            </div>
-
-            <div class="form-group">
-                <label for="linkedIn">LinkedIn URL</label>
-                <input type="text" class="form-control" id="linkedIn" name="linkedIn" placeholder="URL">
-                <span class="error" id="errurl">Enter valid LinkdIn URL</span>
-            </div>
-        </fieldset>
-
-
-
-
-
-        <fieldset class="form-group">
-            <legend>How we met</legend>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <label>How did we meet?</label>
-                        <select class="form-control" id="meet" name="meet">
-                            <option value="none">Choose One</option>
-                            <option value="jobFair">Job Fair</option>
-                            <option value="meetup">Meetup</option>
-                            <option value="haven't">We haven't met</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <span class="error" id="errMeet">Please select an option</span>
-                    </div>
-                    <div class="col" id="otherShow">
-                        <label for="otherS">Other (please specify)</label>
-                        <input type="text" class="form-control" id="otherS" name="otherS">
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="3"></textarea>
-            </div>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <legend>Mailing List</legend>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="mailingList" name="mailingList" value="mailingList">
-                            <label class="form-check-label" for="mailingList">Please add me to your mailing list!</label>
-                            <span class="error" id="errMEmail"><br>Please enter email above</span>
-                        </div>
-                    </div>
-
-                    <div class="col" id="buttons">
-                        <p class="mb-1">Please choose an email format:</p>
-
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="ehtml" name="eFormat" value="html">
-                            <label class="custom-control-label" for="ehtml">HTML</label>
-                        </div>
-
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="eText" name="eFormat" value="text">
-                            <label class="custom-control-label" for="eText">Text</label>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </fieldset>
-
-        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-
-
-    </form>
-
-</div>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>;
-<script src="guestVal.js"></script>
-
-
 </body>
 </html>
